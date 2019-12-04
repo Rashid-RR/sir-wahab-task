@@ -1,24 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Navbar,NavbarBrand } from 'reactstrap'
+import Store from './storeComponent/addStoreItem.jsx'
 import './App.css';
+
+import firebase from './firebase'
+
+// firebase.firestore().collection('times').add({
+//     title : 'Rubiks\'s Cube',
+//     time_seconds : 45
+// })
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Navbar dark color='success'>
+          <div className='container justify-content-center'>
+            <NavbarBrand>
+              <h2>Add Store Items</h2>
+            </NavbarBrand>
+          </div>
+        </Navbar>
+        <Store />
     </div>
   );
 }
